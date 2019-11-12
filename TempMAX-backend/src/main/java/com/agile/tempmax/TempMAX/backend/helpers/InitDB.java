@@ -17,7 +17,6 @@ public class InitDB implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         weatherRepository.save(new WeatherDetail("Budapest", 18.5));
         weatherRepository.save(new WeatherDetail("Salgótarján", 15));
-        System.out.println("Hello World from Application Runner");
     }
 
 }
