@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -19,11 +20,13 @@ public class Controller {
     @Setter(onMethod=@__({@Autowired}))
     private WeatherRepository weatherRepository;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping("/")
     public String index() {
         return "Időjárás adatok: /temps";
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/temps", method = RequestMethod.GET)
     public List<WeatherDetailDto> getTemps() {
         List<WeatherDetail> weathers = weatherRepository.findAll();
@@ -35,6 +38,7 @@ public class Controller {
         return weatherDtos;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/temps", method = RequestMethod.POST)
     public void addTemp(@RequestBody WeatherDetailDto weatherDto) {
         weatherRepository.save(WeatherDetailMapper.map(weatherDto, new WeatherDetail()));
