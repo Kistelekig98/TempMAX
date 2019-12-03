@@ -25,6 +25,8 @@ function listAllTemps() {
 						"<div class='col'>" + "</div>" +
 						"<div class='col'>" + "</div>" +
 						"<div class='col'>" + "</div>" +
+						"<div class='col'>" + "</div>" +
+						"<div class='col'>" + "</div>" +
 					"</div> </li>"
 				);
 			});
