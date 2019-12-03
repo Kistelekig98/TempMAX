@@ -17,25 +17,29 @@ describe("Temps", () => {
         });
     });
     describe("POST /temps", () => {
-        let created_id=null;
         it("should Create new record", (done) => {
             chai.request(app)
                 .post('/temps')
                 .set("content-type","application/json")
                 .send({
                     place:"Test city",
-                    temperature:13
+                    temperature:13,
+					humidity: 0.5,
+					windDirection: 15,
+					windSpeed: 12,
+					lat: 12.33,
+					lng: 55.333,
                 })
                 .end((err, res) => {
-				
+					console.log(res.body)
                     res.should.have.status(200);
                     done();
                    
                 });
         });
 
-
     });
+   
     
 });
  

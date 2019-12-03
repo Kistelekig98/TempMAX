@@ -40,8 +40,7 @@ public class Controller {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/temps", method = RequestMethod.POST)
-    public Boolean addTemp(@RequestBody WeatherDetailDto weatherDto) {
-        weatherRepository.save(WeatherDetailMapper.map(weatherDto, new WeatherDetail()));
-        return true;
+    public WeatherDetail addTemp(@RequestBody WeatherDetailDto weatherDto) {
+        return  weatherRepository.save(WeatherDetailMapper.map(weatherDto, new WeatherDetail()));
     }
 }
