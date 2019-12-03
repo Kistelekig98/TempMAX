@@ -11,7 +11,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<a class="navbar-brand" href="">Főoldal</a>
+		<a class="navbar-brand" href="index.html">Főoldal</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -20,8 +20,8 @@
 				<li class="nav-item">
 					<a class="nav-link" href="forecast.html">Hőmérsékletek<span class="sr-only">(current)</span></a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="edit.html">Hőmérsékletek<span class="sr-only">(current)</span></a>
+				<li class="nav-item active">
+					<a class="nav-link" href="">Meteorológusoknak<span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 		</div>
@@ -29,14 +29,40 @@
 
 	<main role="main" class="container">
 		<div class="jumbotron">
-			<h1>TempMAX</h1>
-			<h4>Időjárás-előrejelző rendszer</h4>
-			<p>Agilis szoftverfejlesztés házi feladat</p>
+			<h1>Időjárásadatok</h1>
+
+			<ul class="list-group" id="tempList">
+				<li class="list-group-item">
+					<div class="row">
+						<div class="col font-weight-bold">Város</div>
+						<div class="col font-weight-bold">Hőmérséklet</div>
+					</div>
+				</li>
+			</ul>
+
+			<h1>Előrejelzés írása</h1>
+
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Cím</span>
+				</div>
+				<input type="text" class="form-control" id="inputTitle">
+			</div>
+
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Szöveg</span>
+				</div>
+				<textarea class="form-control" id="textareaText"></textarea>
+			</div>
+
+			<button type="button" class="btn btn-dark" id="addButton" data-toggle="modal" data-target="#addModal">Hozzáadás</button>
 		</div>
 	</main>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/edit.js"></script>
 </body>
 </html>
