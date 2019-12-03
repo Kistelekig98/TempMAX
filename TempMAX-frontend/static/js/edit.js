@@ -10,6 +10,8 @@ $(document).ready(function () {
 });
 
 function listAllTemps() {
+	$('#tempList').empty();
+
 	$.ajax({
 		type: 'GET',
 		url: uri,
