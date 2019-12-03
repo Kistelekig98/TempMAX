@@ -20,8 +20,11 @@ function listAllTemps() {
 			$.each(list, function (i, item) {
 				$('#tempList').append(
 					"<li class='list-group-item tempListItem'> <div class='row'>" +
-						"<div class='col'>" + item.place + "</div>" +	// item.place
-						"<div class='col'>" + item.temperature + "</div>" +		// item.temperature
+						"<div class='col'>" + item.place + "</div>" +
+						"<div class='col'>" + item.temperature + "</div>" +	
+						"<div class='col'>" + "</div>" +
+						"<div class='col'>" + "</div>" +
+						"<div class='col'>" + "</div>" +
 					"</div> </li>"
 				);
 			});
