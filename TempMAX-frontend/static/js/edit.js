@@ -22,11 +22,11 @@ function listAllTemps() {
 					"<li class='list-group-item tempListItem'> <div class='row'>" +
 						"<div class='col'>" + item.place + "</div>" +
 						"<div class='col'>" + item.temperature + "</div>" +	
-						"<div class='col'>" + "</div>" +
-						"<div class='col'>" + "</div>" +
-						"<div class='col'>" + "</div>" +
-						"<div class='col'>" + "</div>" +
-						"<div class='col'>" + "</div>" +
+						"<div class='col-lg-3'>" + item.created_at + "</div>" +
+						"<div class='col'>" + item.lat + ", " + item.lng + "</div>" +
+						"<div class='col'>" + item.humidity +  "</div>" +
+						"<div class='col'>" + item.windDirection + "</div>" +
+						"<div class='col'>" + item.windSpeed + "</div>" +
 					"</div> </li>"
 				);
 			});
