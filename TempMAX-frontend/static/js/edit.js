@@ -21,12 +21,12 @@ function listAllTemps() {
 				$('#tempList').append(
 					"<li class='list-group-item tempListItem'> <div class='row'>" +
 						"<div class='col'>" + item.place + "</div>" +
-						"<div class='col'>" + item.temperature + "</div>" +	
+						"<div class='col'>" + item.temperature + " ºC" + "</div>" +	
 						"<div class='col-lg-3'>" + item.created_at + "</div>" +
 						"<div class='col'>" + item.lat + ", " + item.lng + "</div>" +
-						"<div class='col'>" + item.humidity +  "</div>" +
-						"<div class='col'>" + item.windDirection + "</div>" +
-						"<div class='col'>" + item.windSpeed + "</div>" +
+						"<div class='col'>" + item.humidity + "</div>" +
+						"<div class='col'>" + item.windDirection + " fok" + "</div>" +
+						"<div class='col'>" + item.windSpeed +  " km/h" + "</div>" +
 					"</div> </li>"
 				);
 			});

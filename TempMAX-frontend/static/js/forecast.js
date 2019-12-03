@@ -15,7 +15,7 @@ function listAllTemps() {
 				$('#tempList').append(
 					"<li class='list-group-item'> <div class='row'>" +
 						"<div class='col'>" + item.place + "</div>" +	// item.place
-						"<div class='col'>" + item.temperature + "</div>" +		// item.temperature
+						"<div class='col'>" + item.temperature + " ºC" + "</div>" +		// item.temperature
 					"</div> </li>"
 				);
 			});
