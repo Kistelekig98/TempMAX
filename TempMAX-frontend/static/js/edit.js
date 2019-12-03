@@ -10,7 +10,7 @@ $(document).ready(function () {
 });
 
 function listAllTemps() {
-	$('#tempList').empty();
+	$('.tempListItem').remove();
 
 	$.ajax({
 		type: 'GET',
@@ -19,7 +19,7 @@ function listAllTemps() {
 		success: function (list) {
 			$.each(list, function (i, item) {
 				$('#tempList').append(
-					"<li class='list-group-item'> <div class='row'>" +
+					"<li class='list-group-item tempListItem'> <div class='row'>" +
 						"<div class='col'>" + item.place + "</div>" +	// item.place
 						"<div class='col'>" + item.temperature + "</div>" +		// item.temperature
 					"</div> </li>"
