@@ -34,7 +34,7 @@ public class Controller {
         weatherService.saveWeatherDetail(weatherDto);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/forecast", method = RequestMethod.GET)
     public List<ForecastDto> getForecasts() {
         return forecastSerivce.getForecasts();

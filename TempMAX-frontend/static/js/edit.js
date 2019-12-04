@@ -1,11 +1,11 @@
-﻿const uri = "http://localhost:8080/temps";
-//const uri = "https://jsonplaceholder.typicode.com/users";
+﻿const uri = "http://localhost:8080";
 
 $(document).ready(function () {
     listAllTemps();
 
     $('#addButton').click(function () {
-    	alert($('#inputTitle').val() + "\n" + $('#textareaText').val());
+    	//alert($('#inputTitle').val() + "\n" + $('#textareaText').val());
+    	addForecast($('#inputTitle').val(), $('#textareaText').val());
     });
 });
 
@@ -14,7 +14,7 @@ function listAllTemps() {
 
 	$.ajax({
 		type: 'GET',
-		url: uri,
+		url: uri + "/temps",
 		cache: false,
 		success: function (list) {
 			$.each(list, function (i, item) {
@@ -35,4 +35,21 @@ function listAllTemps() {
 			alert("jqXHR: " + jqXHR.status + "\n\nstatus: " + status + "\n\nerror: " + error);
 		}
 	});
+}
+
+function addForecast(title, text) {
+    var forecastPost = {
+        Title: title,
+        Text: text
+    };
+
+    $.ajax({
+        type: "POST",
+        url: uri + "/forecasts",
+        contentType: "application/json",
+        data: JSON.stringify(forecastPost),
+        error: function () {
+            alert("Az adatok küldése sikertelen");
+        }
+    });
 }
