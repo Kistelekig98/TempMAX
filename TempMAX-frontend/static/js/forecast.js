@@ -38,8 +38,8 @@ function listAllForecasts() {
 				$('#forecastList').append(
 					"<li class='list-group-item forecastListItem'> <div class='row'>" +
 						"<div class='col'>" + item.creationDate + "</div>" +
-						"<div class='col'>" + item.title + " ºC" + "</div>" +	
-						"<div class='col-lg-3'>" + item.details + "</div>" +
+						"<div class='col'>" + item.title + "</div>" +	
+						"<div class='col'>" + item.details + "</div>" +
 					"</div> </li>"
 				);
 			});

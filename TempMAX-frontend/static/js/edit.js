@@ -39,13 +39,14 @@ function listAllTemps() {
 
 function addForecast(title, text) {
     var forecastPost = {
-        Title: title,
-        Text: text
+        title: title,
+        details: text,
+        creationDate: new Date()
     };
 
     $.ajax({
         type: "POST",
-        url: uri + "/forecasts",
+        url: uri + "/forecast",
         contentType: "application/json",
         data: JSON.stringify(forecastPost),
         error: function () {

@@ -58,6 +58,7 @@ describe("Temps", () => {
                 .send({
                     title:"Szeged",
                     details:"testestsetest",
+                    creationDate: new Date(),
                
                 })
                 .end((err, res) => {
