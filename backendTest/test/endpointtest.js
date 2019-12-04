@@ -16,6 +16,17 @@ describe("Temps", () => {
                 });
         });
     });
+    describe("GET /forecast", () => {
+        it("should return all temps", (done) => {
+            chai.request(app)
+                .get('/forecast')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('array');
+                    done();
+                });
+        });
+    });
     describe("POST /temps", () => {
         it("should Create new record", (done) => {
             chai.request(app)
@@ -35,6 +46,25 @@ describe("Temps", () => {
                     res.should.have.status(200);
                     done();
                    
+                });
+        });
+
+    });
+    describe("POST /forecast", () => {
+        it("should Create new record", (done) => {
+            chai.request(app)
+                .post('/forecast')
+                .set("content-type","application/json")
+                .send({
+                    title:"Szeged",
+                    details:"testestsetest",
+               
+                })
+                .end((err, res) => {
+                                        console.log(res.body)
+                    res.should.have.status(200);
+                    done();
+
                 });
         });
 
