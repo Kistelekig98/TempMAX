@@ -3,8 +3,6 @@ package com.agile.tempmax.TempMAX.backend.helpers;
 import com.agile.tempmax.TempMAX.backend.dtos.WeatherDetailDto;
 import com.agile.tempmax.TempMAX.backend.model.WeatherDetail;
 
-import java.util.Date;
-
 public class WeatherDetailMapper {
 
     public static WeatherDetailDto map(WeatherDetail weather, WeatherDetailDto weatherDto) {
